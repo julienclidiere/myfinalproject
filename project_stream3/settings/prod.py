@@ -16,6 +16,6 @@ DATABASES['default'] = dj_database_url.parse(CLEAR_DB_URL)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "False")
-ALLOWED_HOSTS = [' vast-mesa-35318.herokuapp.com']
+ALLOWED_HOSTS = ['vast-mesa-35318.herokuapp.com']
 
 
