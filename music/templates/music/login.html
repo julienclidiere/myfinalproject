@@ -1,0 +1,49 @@
+{% extends 'music/base_visitor.html' %}
+{% block title %}Log In{% endblock %}
+{% block login_active %}active{% endblock %}
+
+{%block login_css  %}
+{%endblock %}
+
+{% block body %}
+
+    <!--ajout du code pen login debut -->
+
+
+<div class="login">
+	<h1 style="color:rgba(45, 34, 34, 0.94)">Login In Now</h1>
+    <br>
+
+      <!--ajout du code pen login fin -->
+
+
+      <!--Debut on ne touche pas au code -->
+
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+      <!--Fin on ne touche pas au code -->
+
+
+      <!--ajout du code pen login debut -->
+                    <form method="post" action="{% url 'music:login_user'%}">
+
+                        {% csrf_token %}
+<!--J'ai mis sous forme de commentaires -->
+                            <!--label for="id_username">Username</label-->
+                        <!--ajout du code pen login fin -->
+                                <input id="id_username" maxlength="30" name="username" type="text" placeholder="Username" required="required">
+
+
+                            <!--label for="id_password">Password</label-->
+                                <input id="id_password" maxlength="30" name="password" type="password" placeholder="Password" required="required">
+
+                        <button type="submit" class="btn btn-primary btn-block btn-large">Send It Baby!</button>
+	                </form>
+
+
+                    <h6 id="color_behind_login">Don't have an account?  <a href="{% url 'music:register' %}">  Click here  </a>  to register.</h6>
+                </div>
+
+
+{% endblock %}
